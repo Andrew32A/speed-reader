@@ -3,17 +3,26 @@ const start_button = document.getElementById('start_button')
 const stop_button = document.getElementById('stop_button')
 const wpm = document.getElementById('wpm')
 
-
 display.innerHTML = 'test' //content_text.txt // insert content text
 wpm.value = 300
 
-start_button.addEventListener('click', update)
-stop_button.addEventListener('click', update)
-stop_button.addEventListener('input', update)
+start_button.addEventListener('click', start_read)
+stop_button.addEventListener('click', stop_read)
+wpm.addEventListener('input', wpm_update)
 
-function update(e) {
+function start_read(e) {
     display.innerHTML = (('b' + 'a' + + 'a' + 'a').toLowerCase())
 }
+
+function stop_read(e) {
+    display.innerHTML = "test stop"
+}
+
+function wpm_update(e) {
+    display.innerHTML = "test stop"
+    return wpm
+}
+
 
 
 
