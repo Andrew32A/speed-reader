@@ -2,6 +2,10 @@ const display = document.getElementById('display')
 const start_button = document.getElementById('start_button')
 const stop_button = document.getElementById('stop_button')
 const wpm = document.getElementById('wpm')
+const text = document.getElementById('input_text')
+
+let words
+let current = 0
 
 display.innerHTML = 'test' //content_text.txt // insert content text
 wpm.value = 300
@@ -11,11 +15,22 @@ stop_button.addEventListener('click', stop_read)
 wpm.addEventListener('input', wpm_update)
 
 function start_read(e) {
-    display.innerHTML = (('b' + 'a' + + 'a' + 'a').toLowerCase())
+    words = text.value.split(' ').filter(word=>{
+        return word.length;
+    });
+
+    const timer = setInterval(()=>{
+        display.textContent = words[current];
+        current++;
+        if (current > words.length){
+            clearInterval(timer)
+        }
+    }, ((60/wpm.value)*1000))
 }
 
 function stop_read(e) {
     display.innerHTML = "test stop"
+    clearInterval(timer)
 }
 
 function wpm_update(e) {
@@ -24,6 +39,85 @@ function wpm_update(e) {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// -------------------------------------------------------------------------------------------
+/**
+ * Start the interval
+//  */
+//  var run = function () {
+
+// 	// Run the reader
+// 	interval = setInterval(function () {
+
+// 		// If there are no more words, stop
+// 		if (!words[current]) {
+// 			end();
+// 			return;
+// 		}
+
+// 		// Show the word
+// 		reader.textContent = words[current];
+
+// 		// Go to the next word
+// 		current++;
+
+// 	}, speed);
+
+// };
+
+
+
+
+
+// /**
+//  * Start the reader
+//  * @param  {Event} event The event object
+//  */
+// var start = function (event) {
+
+// 	// Only run on #start button
+// 	if (event.target.id !== 'start') return;
+
+// 	// If there's no text to read, do nothing
+// 	if (!text.value.length) return;
+
+// 	// Get the words
+// 	words = text.value.split(' ').filter(function (word) {
+// 		return word.length;
+// 	});
+
+// 	// Get the words-per-minute
+// 	speed = (60 / parseInt(wpm.value, 10)) * 1000;
+
+// 	// Set the current item to the first word
+// 	current = 0;
+
+// 	// Run the reader
+// 	run();
+
+// };
 
 
 
