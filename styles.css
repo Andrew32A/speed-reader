@@ -21,6 +21,7 @@ body {
     margin-bottom: 75px;
     font-size: 200px;
     color: #e6f1ff;
+    transition: 5000ms;
 }
 
 /* buttons */
