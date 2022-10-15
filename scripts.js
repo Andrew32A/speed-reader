@@ -29,9 +29,9 @@ function countdown_timer() {
         display.textContent = countdown_num;
         countdown_num--;
         if (countdown_num <= -1) {
-            display.textContent = '-- Go --';
+            display.textContent = '-- Go! --';
             clearInterval(countdown);
-            countdown = 3;
+            countdown_num = 3;
             start_read()
         }
     }, 1000)
@@ -59,6 +59,8 @@ function start_read(e) {
 function stop_read() {
     start_button.disabled = false;
     clearInterval(timer);
+    clearInterval(countdown);
+    countdown_num = 3;
     current = 0;
 }
 
