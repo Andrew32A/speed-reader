@@ -6,6 +6,7 @@ const text = document.getElementById('input_text');
 
 let current = 0;
 let words;
+let timer = null;
 
 display.innerHTML = 'Welcome'; //content_text.txt // insert content text
 wpm.value = 300;
@@ -18,7 +19,7 @@ function start_read(e) {
         return word.length;
     });
 
-    const timer = setInterval(()=>{
+    timer = setInterval(()=>{
         display.textContent = words[current];
         current++;
         if (current > words.length) {
@@ -30,5 +31,5 @@ function start_read(e) {
 }
 
 function stop_read() {
-    return true;
+    clearInterval(timer);
 }
