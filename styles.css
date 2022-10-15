@@ -90,6 +90,7 @@ body {
 #start_button:hover, #stop_button:hover {
     color: white;
     border-color: transparent;
+    cursor: pointer;
 }
 
 #start_button:hover:after, #stop_button:hover:after {
