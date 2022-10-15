@@ -39,6 +39,7 @@ body {
 
 /* buttons */
 #start_button, #stop_button {
+    box-shadow: 10px 10px 20px black;
     border-radius: 15px;
     font-size: 50px;
     padding: 75px 100px;
