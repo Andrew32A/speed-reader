@@ -31,7 +31,7 @@
         </section>
 
         <section class="box c">
-            <input id="wpm" type="number" min="0" required="required">
+            <input id="wpm" type="number" oninput="this.value = Math.abs(this.value)" required="required">
             <span>WPM (Default 300)</span>
         </section>
 
