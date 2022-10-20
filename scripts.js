@@ -1,4 +1,4 @@
-// gathering html id's and placing them into variables for easier access
+// gathering html ids and placing them into variables for easier access
 const display = document.getElementById('display');
 const start_button = document.getElementById('start_button');
 const stop_button = document.getElementById('stop_button');
