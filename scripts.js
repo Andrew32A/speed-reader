@@ -18,7 +18,6 @@ let countdown_num = 3;
 display.innerHTML = 'Welcome'; //content_text.txt // insert content text
 wpm.value = 300;
 
-
 // event listeners for stop and start buttons
 start_button.addEventListener('click', countdown_timer);
 stop_button.addEventListener('click', stop_read);
