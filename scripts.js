@@ -1,4 +1,4 @@
-// gathering html ids and placing them into variables for easier access
+// gathering html id's and placing them into variables for easier access
 const display = document.getElementById('display');
 const start_button = document.getElementById('start_button');
 const stop_button = document.getElementById('stop_button');
@@ -17,6 +17,7 @@ let countdown_num = 3;
 // placeholders for page refresh
 display.innerHTML = 'Welcome'; //content_text.txt // insert content text
 wpm.value = 300;
+
 
 // event listeners for stop and start buttons
 start_button.addEventListener('click', countdown_timer);
@@ -38,7 +39,7 @@ function countdown_timer() {
 }
 
 // main loop
-function start_read(e) {
+function start_read() {
     words = text.value.split(' ').filter(word=>{
         return word.length;
     });
